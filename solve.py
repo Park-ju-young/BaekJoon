@@ -11,3 +11,18 @@ for i in range(K):
 for j in range(len(st)):
     sum += st[j]
 print(sum)
+
+
+### 프로그래머스 <정렬 <k번째 수
+def solution(array, commands):
+    answer = []
+    for x in range(len(commands)):
+        cut = []
+        i = commands[x][0]
+        j = commands[x][1]
+        k = commands[x][2]
+        for y in range(i-1, j):
+            cut.append(array[y])
+        cut.sort()
+        answer.append(cut[k-1])
+    return answer
