@@ -26,3 +26,19 @@ def solution(array, commands):
         cut.sort()
         answer.append(cut[k-1])
     return answer
+
+### 프로그래머스 <해시 < 완주하지 못한 선수
+def solution(participant, completion):
+    answer = ''
+    participant.sort()
+    completion.sort()
+
+    for i in range(len(completion)):
+        if(completion[i] != participant[i]):
+            answer = participant[i]
+            break
+
+    if answer == '':
+        answer = participant[-1]
+
+    return answer
